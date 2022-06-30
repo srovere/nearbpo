@@ -1,0 +1,24 @@
+# Data source definition
+data_source:
+  parameters:
+    db:
+      id: "48552c65-8c07-44b6-aa5c-74ef2fce002f"
+      region: "us-east1"
+      keyspace: "public"
+    application:
+      token: "AstraCS:RawszStYieKGNvPbZbylktYX:d4250b373716022a09e8cf549d10e1c788df80d29bcead5ef1fe4a6a3d50f5c2"
+    
+# # Map configuration
+# basemap:
+#   url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+#   attribution: "Appsilon"
+#   center:
+#     latitude: 52.23276982545444
+#     longitude: 21.01414467671963
+#   zoom: 20
+#   
+# # Gauge configuration
+# gauge:
+#   breaks: [ 0, 20, 40, 60, 80, 100 ]
+#   palette: "RdYlGn"
+#   inverted: TRUE

@@ -1,0 +1,214 @@
+station_id,name,latitude,longitude,elevation,administrative_level_1,administrative_level_2,status
+87008,Abra Pampa INTA,-22.83,-65.85,3484,Jujuy,Cochinoca,N
+87118,Famaillá INTA,-27.05,-65.42,363,Tucumán,Famaillá,N
+87131,La María INTA,-28.23,-64.15,169,Santiago del Estero,Silípica,N
+87144,Las Breñas INTA,-27.08,-61.12,102,Chaco,Nueve de Julio,N
+87147,Pres. Roque Sáenz Peña INTA,-26.87,-60.45,90,Chaco,Comandante Fernández,N
+87152,El Colorado INTA,-26.3,-59.37,78,Formosa,Pirané,N
+87158,Colonia Benítez INTA,-27.42,-58.93,54,Chaco,San Fernando,N
+87180,Cerro Azul INTA,-27.65,-55.43,270,Misiones,Leandro N. Alem,N
+87276,Bella Vista INTA,-28.43,-58.92,70,Corrientes,Bella Vista,N
+87283,Mercedes INTA (Ctes.),-29.17,-58.02,100,Corrientes,Mercedes,N
+87313,San Juan INTA,-31.37,-68.32,615,San Juan,Angaco,N
+87359,Rafaela INTA,-31.18,-61.55,100,Santa Fe,Castellanos,N
+87016,Orán Aero,-23.1547,-64.3281,357,Salta,Orán,N
+87022,Tartagal Aero,-22.6166,-63.7965,450,Salta,General José de San Martín,N
+87043,Jujuy Univ. Nac.,-24.1786,-65.3263,1302,Jujuy,Palpalá,N
+87046,Jujuy Aero,-24.384,-65.0955,905,JUJUY,El Carmen,N
+87047,Salta Aero,-24.8443,-65.4757,1221,Salta,Capital,N
+87050,Metán,-25.5243,-64.973,855,Salta,Metán,N
+87065,Rivadavia,-24.1853,-62.8866,205,Salta,Rivadavia,N
+87078,Las Lomitas,-24.7024,-60.5941,130,Formosa,Patiño,N
+87097,Iguazú Aero,-25.7309,-54.4775,270,Misiones,Iguazú,N
+87129,Santiago del Estero Aero,-27.7548,-64.2998,199,Santiago del Estero,Capital,N
+87148,Pres. Roque Sáenz Peña Aero,-26.7464,-60.4868,93,Chaco,Comandante Fernández,N
+87155,Resistencia Aero,-27.4389,-59.046,52,Chaco,San Fernando,N
+87162,Formosa Aero,-26.2124,-58.2293,60,Formosa,Formosa,N
+87163,Bernardo de Irigoyen Aero,-26.2779,-53.6713,815,Misiones,General Manuel Belgrano,N
+87166,Corrientes Aero,-27.4498,-58.7597,62,Corrientes,Capital,N
+87173,Ituzaingó,-27.5856,-56.6772,72,Corrientes,Ituzaingó,N
+87178,Posadas Aero,-27.391,-55.967,125,Misiones,Capital,N
+87187,Oberá Aero,-27.4837,-55.1317,303,Misiones,Oberá,N
+87211,Tinogasta,-28.0673,-67.5653,1201,Catamarca,Tinogasta,N
+87213,Chilecito Aero,-29.2184,-67.4425,945,La Rioja,Chilecito,N
+87217,La Rioja Aero,-29.3825,-66.7933,429,La Rioja,Capital,N
+87222,Catamarca Aero,-28.5935,-65.7553,454,Catamarca,Valle Viejo,N
+87244,Villa María del Río Seco,-29.9058,-63.7276,341,Córdoba,Rió Seco,N
+87257,Ceres Aero,-29.8756,-61.936,88,Santa Fe,San Cristóbal,N
+87270,Reconquista Aero,-29.2051,-59.6934,53,Santa Fe,General Obligado,N
+87281,Mercedes Aero (Ctes.),-29.226,-58.0857,107,Corrientes,Mercedes,N
+87289,Paso de los Libres Aero,-29.6893,-57.1485,70,Corrientes,Paso de los Libres,N
+87305,Jáchal,-30.2294,-68.739,1175,San Juan,Jáchal,N
+87311,San Juan Aero,-31.5746,-68.4224,598,San Juan,Capital,N
+87320,Chamical Aero,-30.3478,-66.2967,461,La Rioja,Chamical,N
+87322,Chepes,-31.3316,-66.5886,658,La Rioja,Rosario Vera Peñaloza,N
+87328,Villa Dolores Aero,-31.9513,-65.149,569,Córdoba,San Javier,N
+87344,Córdoba Aero,-31.2966,-64.2119,474,Córdoba,Colón,N
+87345,Córdoba Obs.,-31.4208,-64.1983,426,Córdoba,Capital,N
+87349,Pilar Obs.,-31.6681,-63.882,338,Córdoba,Rió Segundo,N
+87356,Sunchales Aero,-30.9568,-61.5323,92,Santa Fe,Castellanos,N
+87360,Rafaela Aero,-31.2775,-61.5095,59,Santa Fe,Castellanos,N
+87371,Sauce Viejo Aero,-31.7078,-60.8053,18,Santa Fe,La Capital,N
+87373,Paraná INTA,-31.83,-60.52,110,Entre Ríos,Paraná,N
+87417,La Consulta INTA,-33.73,-69.12,940,Mendoza,San Carlos,N
+87466,Marcos Juárez INTA,-32.68,-62.12,110,Córdoba,Marcos Juárez,N
+87472,Oliveros INTA,-32.55,-60.85,26,Santa Fe,Iriondo,N
+87484,Pergamino INTA,-33.93,-60.55,65,Buenos Aires,Pergamino,N
+87493,Concepción del Uruguay INTA,-32.48,-58.23,25,Entre Ríos,Uruguay,N
+87494,San Pedro INTA,-33.68,-59.68,28,Buenos Aires,San Pedro,N
+87508,Rama Caída INTA,-34.67,-68.38,692,Mendoza,San Rafael,N
+87537,General Villegas INTA,-34.92,-62.73,117,Buenos Aires,General Villegas,N
+87575,Castelar INTA,-34.67,-58.65,22,Buenos Aires,Morón,N
+87624,Anguil INTA,-36.5,-63.98,165,La Pampa,Capital,N
+87385,Villaguay Aero,-31.85,-59.08,43,Entre Ríos,Villaguay,N
+87393,Monte Caseros Aero,-30.2617,-57.639,54,Corrientes,Monte Caseros,N
+87395,Concordia Aero,-31.3022,-58.0015,38,Entre Ríos,Concordia,N
+87405,Uspallata,-32.5946,-69.3401,1891,Mendoza,Las Heras,N
+87412,San Carlos (Mza.),-33.7747,-69.0426,940,Mendoza,San Carlos,N
+87416,San Martín (Mza.),-33.0732,-68.4649,653,Mendoza,San Martín,N
+87418,Mendoza Aero,-32.8437,-68.7963,704,Mendoza,Las Heras,N
+87420,Mendoza Obs.,-32.8948,-68.8728,827,Mendoza,Capital,N
+87436,San Luis Aero,-33.2745,-66.3514,713,San Luis,La Capital,N
+87444,Santa Rosa de Conlara Aero,-32.379,-65.1799,620,San Luis,Junín,N
+87448,Villa Reynolds Aero,-33.7181,-65.3737,486,San Luis,General Pedernera,N
+87453,Río Cuarto Aero,-33.0955,-64.277,421,Córdoba,Rió Cuarto,N
+87467,Marcos Juárez Aero,-32.6797,-62.1505,114,Córdoba,Marcos Juárez,N
+87468,Venado Tuerto,-33.6823,-61.9614,113,Santa Fe,General López,N
+87470,El Trébol,-32.1921,-61.712,96,Santa Fe,San Martín,N
+87480,Rosario Aero,-32.9185,-60.7815,25,Santa Fe,Rosario,N
+87497,Gualeguaychú Aero,-33.0125,-58.6108,21,Entre Ríos,Gualeguaychú,N
+87506,Malargüe Aero,-35.4813,-69.5834,1425,Mendoza,Malargüe,N
+87509,San Rafael Aero,-34.5908,-68.4017,748,Mendoza,San Rafael,N
+87532,General Pico Aero,-35.6882,-63.7595,145,La Pampa,Maracó,N
+87534,Laboulaye Aero,-34.1278,-63.3676,137,Córdoba,Presidente Roque Sáenz Peña,N
+87540,Trenque Lauquen,-35.969,-62.7261,95,Buenos Aires,Trenque Lauquen,N
+87544,Pehuajó Aero,-35.8407,-61.8598,87,Buenos Aires,Pehuajó,N
+87548,Junín Aero,-34.5525,-60.9313,81,Buenos Aires,Junín,N
+87550,Nueve de Julio,-35.439,-60.8819,76,Buenos Aires,Nueve de Julio,N
+87553,San Fernando,-34.455,-58.5845,10,Buenos Aires,San Fernando,N
+87571,El Palomar Aero,-34.603,-58.6126,12,Buenos Aires,Tres de Febrero,N
+87573,Merlo Aero,-34.6847,-58.7448,36,Buenos Aires,Merlo,N
+87574,Morón Aero,-34.6712,-58.6382,24,Buenos Aires,Morón,N
+87576,Ezeiza Aero,-34.818600000000004,-58.5423,20,Buenos Aires,Esteban Echeverría,N
+87582,Aeroparque Buenos Aires,-34.5589,-58.4198,6,Ciudad Autónoma de Buenos Aires,Distrito Federal,N
+87585,Buenos Aires,-34.5902,-58.484,25,Ciudad Autónoma de Buenos Aires,Distrito Federal,N
+87593,La Plata Aero,-34.9661,-57.8961,19,Buenos Aires,La Plata,N
+87596,Punta Indio (BA),-35.3512,-57.2925,22,Buenos Aires,Magdalena,N
+87616,Victorica,-36.2126,-65.4317,312,La Pampa,Loventué,N
+87623,Santa Rosa Aero,-36.5932,-64.28,191,La Pampa,Capital,N
+87637,Coronel Suárez Aero,-37.4533,-61.8907,233,Buenos Aires,Coronel Suárez,N
+87686,Barrow INTA,-38.32,-60.25,120,Buenos Aires,Tres Arroyos,N
+87691,Balcarce INTA,-37.75,-58.3,130,Buenos Aires,Balcarce,N
+87741,Hilario Ascasubi INTA,-39.38,-62.62,22,Buenos Aires,Villarino,N
+87829,Trelew INTA,-43.23,-65.3,10,Chubut,Rawson,N
+9987000,Alto Valle INTA,-39.02,-67.67,242,Río Negro,General Roca,N
+87569,San Miguel,-34.5552,-58.7305,26,Buenos Aires,General Sarmiento,N
+9987001,Bordenave INTA,-37.85,-63.02,212,Buenos Aires,Puán,N
+9987002,Catamarca INTA (Sumalao),-28.48,-65.73,525,Catamarca,Valle Viejo,N
+9987003,Concordia INTA,-31.37,-58.12,48,Entre Ríos,Concordia,N
+9987006,General Pico INTA,-35.67,-63.75,143,La Pampa,Maracó,N
+9987009,Manfredi INTA,-31.82,-63.77,292,Córdoba,Río Segundo,N
+87641,Azul Aero,-36.832,-59.8864,147,Buenos Aires,Azul,N
+87643,Olavarría Aero,-36.8906,-60.2228,166,Buenos Aires,Olavarría,N
+87645,Tandil Aero,-37.2412,-59.2332,175,Buenos Aires,Tandil,N
+87648,Dolores Aero,-36.3169,-57.7169,9,Buenos Aires,Dolores,N
+87649,Benito Juárez Aero,-37.7013,-59.7911,207,Buenos Aires,Benito Juárez,N
+87663,Villa Gesell Aero,-37.2353,-57.0188,9,Buenos Aires,General Juan Madariaga,N
+87679,Pigüé Aero,-37.6082,-62.3865,304,Buenos Aires,Saavedra,N
+87683,Coronel Pringles Aero,-38.0043,-61.33,247,Buenos Aires,Coronel Pringles,N
+87688,Tres Arroyos,-38.3595,-60.2845,115,Buenos Aires,Tres Arroyos,N
+87692,Mar del Plata Aero,-37.9321,-57.5815,21,Buenos Aires,General Pueyrredón,N
+87715,Neuquén Aero,-38.952,-68.1367,271,Neuquén,Confluencia,N
+87719,Cipolletti,-38.9412,-67.9785,265,Río Negro,General Roca,N
+87736,Río Colorado,-38.9911,-64.0872,79,Río Negro,Pichi Mahuida,N
+87750,Bahía Blanca,-38.7147,-62.163,83,Buenos Aires,Bahía Blanca,N
+87761,Chapelco Aero,-40.0805,-71.1442,779,Neuquén,Lacar,N
+87765,Bariloche Aero,-41.1475,-71.1643,840,Río Negro,Bariloche,N
+87774,Maquinchao,-41.2439,-68.7065,888,Río Negro,Veinticinco de Mayo,N
+87784,San Antonio Oeste Aero,-40.7572,-65.0309,20,Río Negro,San Antonio,N
+87791,Viedma Aero,-40.8635,-63.007,7,Río Negro,Adolfo Alsina,N
+87800,El Bolsón Aero,-41.9541,-71.5339,337,Río Negro,Bariloche,N
+87803,Esquel Aero,-42.9059,-71.145,797,Chubut,Futaleufú,N
+87814,Paso de Indios,-43.8618,-69.0474,460,Chubut,Paso de Indios,N
+87823,Puerto Madryn Aero,-42.7555,-65.1015,136,Chubut,Biedma,N
+87828,Trelew Aero,-43.2089,-65.2821,43,Chubut,Rawson,N
+87852,Perito Moreno Aero,-46.538,-70.9853,429,Santa Cruz,Lago Buenos Aires,N
+87860,Comodoro Rivadavia Aero,-45.7923,-67.4619,46,Chubut,Escalante,N
+87880,Gobernador Gregores Aero,-48.7824,-70.1627,357,Santa Cruz,Rió Chico,N
+87896,Puerto Deseado Aero,-47.7337,-65.9078,80,Santa Cruz,Deseado,N
+87904,El Calafate Aero,-50.2846,-72.0515,204,Santa Cruz,Lago Argentino,N
+87909,San Julián Aero,-49.3082,-67.8032,62,Santa Cruz,Magallanes,N
+87912,Puerto Santa Cruz Aero,-50.0218,-68.5789,111,Santa Cruz,Corpen Aike,N
+87925,Río Gallegos Aero,-51.6116,-69.308,19,Santa Cruz,Güer Aike,N
+87936,Tolhuin,-54.7,-67.25,105,"Tierra del Fuego, Antártida e Islas del Atlántico Sur",Ushuaia,N
+87938,Ushuaia Aero,-54.8401,-68.3034,57,"Tierra del Fuego, Antártida e Islas del Atlántico Sur",Ushuaia,N
+9987010,Reconquista INTA,-29.183,-59.866,42,Santa Fe,General Obligado,N
+9987011,Villa Mercedes INTA,-33.72,-65.48,515,San Luis,General Pedernera,N
+9987012,Zavalla U.N. Rosario,-33.02,-60.88,50,Santa Fe,Rosario,N
+9987013,Capilla del Monte INTA,-30.86,-64.52,984,Córdoba,Punilla,N
+9987014,Bragado INTA,-35.11,-60.49,50,Buenos Aires,Bragado,N
+9987015,Canals INTA,-33.57,-62.88,125,Córdoba,Unión,N
+87045,Salta INTA,-24.9,-65.48,1250,Salta,Cerrillos,N
+87007,La Quiaca Obs.,-22.1033,-65.6008,3459,Jujuy,Yavi,N
+87121,Tucumán Aero,-26.8373,-65.1084,450,Tucumán,Cruz Alta,N
+87374,Paraná Aero,-31.7904,-60.4842,78,Entre Ríos,Paraná,N
+87563,Las Flores Aero,-36.0415,-59.1371,38,Buenos Aires,Las Flores,N
+87568,Don Torcuato Aero,-34.48,-58.62,4,Buenos Aires,Tigre,N
+87640,Bolívar Aero,-36.1864,-61.0727,94,Buenos Aires,Bolívar,N
+87685,Laprida,-37.57,-60.77,212,Buenos Aires,Laprida,N
+87934,Río Grande (BA),-53.7802,-67.7587,22,"Tierra del Fuego, Antártida e Islas del Atlántico Sur",Río Grande,N
+87454,Chacras de Coria,-33.0049,-68.8699,921,Mendoza,Luján de Cuyo,N
+30007404,Las Cuevas,-32.8,-70.0667,3225,Mendoza,Las Cuevas,N
+30007916,Río Turbio Aero,-51.6046,-72.229,273,Santa Cruz,Río Turbio,N
+30010001,Sede Dorrego SMN,-34.5642,-58.4173,0,CABA,CABA,N
+30010002,Club Náutico San Isidro,-34.4492,-58.5058,4,Buenos Aires,San Isidro,N
+30010003,Vag Usuahia,-54.8484,-68.3105,11,"Tierra del Fuego, Antártida e Islas del Atlántico ",Usuahia,N
+30010004,Base Carlini,-62.2378,-58.6645,8,"Tierra del Fuego, Antártida e Islas del Atlántico ",Base Carlini,N
+87539,Trenque Lauquen,-35.9692,-62.7262,95,Buenos Aires,Trenque Lauquen,N
+87549,9 de Julio,-35.4391,-60.8819,76,Buenos Aires,9 de Julio,N
+87558,Mercedes,-34.6608,-59.4369,40,Buenos Aires,Mercedes,N
+87680,San German,-38.2829,-62.9442,187,Buenos Aires,San German,N
+87738,Algarrobo,-38.8786,-63.1263,50,Buenos Aires,Algarrobo,N
+87747,Argerich,-38.7811,-62.5951,3,Buenos Aires,Argerich,N
+87788,Villalonga,-39.9219,-62.7986,39,Buenos Aires,Villalonga,N
+87789,Chacra Experimental Patagones,-40.6633,-62.8858,26,Buenos Aires,José B. Casas,N
+87797,Faro Segunda Barranca,-40.7627,-62.2693,3,Buenos Aires,,N
+80000018,Laboratorio de Sensores ICyA,90,0,22,Buenos Aires,Hurlingham,N
+80000079,Castelar 1 - ICyA CIRN,-34.6054,-58.6703,22,Buenos Aires,Hurlingham,N
+80000230,Lima - EEA San Pedro,-34.0795,-59.2057,28,Buenos Aires,Lima,N
+80000231,Rio Tala - EEA San Pedro,-33.7652,-59.6268,29,Buenos Aires,Rio Tala,N
+80000232,San Nicolas - EEA San Pedro,-33.3583,-60.2253,37,Buenos Aires,San  Nicol?s,N
+80000233,Anguil -EEA Anguil,-36.54,-63.99,165,La Pampa,Anguil,N
+80000235,Gral San Martin - EEA Anguil,-38,-63.52,177.9,La Pampa,General San Martin,N
+80000236,Alfonso - EEA Pergamino,-33.9122,-60.838,80,Buenos Aires,Mariano Alfonso,N
+80000237,Arrecifes - EEA Pergamino,-34.0499,-60.1361,36,Buenos Aires,Arrecifes,N
+80000238,Ferre - EEA Pergamino,-34.1002,-61.1397,103,Buenos Aires,Ferr?,N
+80000240,Miramar - EEA Balcarce,-38.1549,-57.9941,12,Buenos Aires,Miramar,N
+80000241,La Dulce - EEA Balcarce,-38.3375,-59.0083,72,Buenos Aires,Necochea,N
+80000242,Balcarce - EEA Balcarce,-37.7632,-58.2976,130,Buenos Aires,Balcarce,N
+80000243,De La Garma - ICyA CIRN,-37.8361,-60.3927,138,Buenos Aires,De La Garma,N
+80000244,Coronel Suarez - EEA Bordenave,-37.4439,-61.9248,237,Buenos Aires,Coronel Suarez,N
+80000245,Tornquist - EEA Bordenave,-38.1184,-62.2378,280,Buenos Aires,Tornquist,N
+80000257,INTA - Alpachiri (Imetos),-37.37,-63.77,145,La Pampa,Guatrache,N
+80000267,Llavallol - ICyA CIRN,-34.7899,-58.4501,23,Buenos Aires,Llavallol,N
+80000300,Rio Colorado - EEA Alto Valle,-39.02,-64.08,79,Río Negro,Río Colorado,N
+80000358,San Pedro - EEA San Pedro,-33.7367,-59.7967,26,Buenos Aires,San Pedro,N
+80000363,INTA - Hilario Ascasubi,-39.3833,-62.6166,14,Buenos Aires,Villarino,N
+80000365,Algarrobo,-38.8869,-63.1386,40,Buenos Aires,Algarrobo,N
+80000366,Villalonga - EEA H Ascasubi,-39.9245,-62.6179,15,Buenos Aires,Villalonga,N
+80000367,Trenque Lauquen - EEA Villegas,-35.9727,-62.7655,57,Buenos Aires,Trenque Lauquen,N
+80000368,Las Armas - EEA Cuenca Salado,-37.0934,-57.8745,28,Buenos Aires,Las Armas,N
+80000401,Cnel Pringles - EEA Bordenave,-37.7417,-61.5254,217,Buenos Aires,Coronel Suarez,N
+80000413,25 de Mayo - EEA Pergamino,-35.4794,-60.1267,85,Buenos Aires,25 de Mayo,N
+80000447,Medanos - EEA Hilario Ascasubi,-38.8681,-62.6646,29,Buenos Aires,Medanos,N
+80000448,Stroeder -EEA Hilario Ascasubi,-40.18,-62.61,21,Buenos Aires,Stroeder,N
+80000452,IDEVI - EEA Valle Inferior,-40.71,-63.53,14,Río Negro,Viedma,N
+80000464,INTA - Valle Inferior,-40.8,-63.06,14,Río Negro,Viedma,N
+80000469,Loma Chata - EEA Barrow,-38.65,-61.45,159.8,Buenos Aires,Coronel Dorrego,N
+80000472,Chascomus - EEA Cuenca Salado,-35.7438,-58.0538,28.2,Buenos Aires,Chascomus,N
+80000473,Rauch - EEA Cuenca Salado,-36.7965,-59.1079,103,Buenos Aires,Rauch,N
+80000475,Lincoln - EEA Villegas,-34.8419,-61.601,109.8,Buenos Aires,General Lincoln,N
+80000476,Cañada Seca - EEA Villegas,-34.55,-62.9047,127,Buenos Aires,Cañada Seca,N
+80000518,Bordenave - EEA Bordenave,-37.75,-63.0833,202,Buenos Aires,Bordenave,N
+80000652,EEA Cesareo Naredo,-36.5,-62,120,Buenos Aires,Guamini,N
+80000662,San Fernando - EEA Delta,-34.2511,-58.6104,3,Buenos Aires,Tigre,N
