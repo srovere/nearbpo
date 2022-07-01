@@ -4,6 +4,11 @@
 #
 
 # Load packages
+require(dplyr)
+require(highcharter)
+require(shiny)
+require(shinythemes)
+require(stlplus)
 require(yaml)
 
 # Read configuration file
@@ -16,13 +21,19 @@ source("R/ObservationFacade.R", echo = FALSE)
 source("R/StationFacade.R", echo = FALSE)
 source("R/VariableFacade.R", echo = FALSE)
 
+# Load Shiny modules
+source("R/modules/static-drop-down.r", echo = FALSE)
+
 # Create DataSource instance
 dataSource <- DataSource$new(parameters = config$data_source$parameters)
 
 # Create facades
 variable_facade <- VariableFacade$new(dataSource)
-variables <- variable_facade$findAll()
 station_facade <- StationFacade$new(dataSource)
-stations <- station_facade$findAll()
 observation_facade <- ObservationFacade$new(dataSource)
-observations <- observation_facade$find(station_id = 87544, from = as.Date("2019-01-01"), to = as.Date("2019-01-31"))
+
+# Select stations and variables
+stations <- station_facade$findAll() %>%
+  dplyr::arrange(name)
+variables <- variable_facade$findAll() %>%
+  dplyr::arrange(name)

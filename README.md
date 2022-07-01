@@ -1,2 +1,2 @@
 # nearbpo
-Role play exercise por NearBPO
+Role play exercise for NearBPO

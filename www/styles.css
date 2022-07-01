@@ -1,0 +1,13 @@
+.well {
+  width: 300px;
+  background-color: #dddddd;
+  min-height: 600px;
+}
+
+#menu {
+  padding-left: 150px;
+}
+
+.navbar-header {
+  padding-left: 20px !important;
+}

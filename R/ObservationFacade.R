@@ -8,11 +8,14 @@ ObservationFacade <- R6Class("ObservationFacade",
 	    private$dataSource <- dataSource
 	  },
 	  
-	  find = function(station_id, from = NULL, to = NULL) {
+	  find = function(station_id, variable_id = NULL, from = NULL, to = NULL) {
 	    # Define query filters
 	    filters <- list(
 	      list(columnName = "station_id", operator = "eq", value = as.character(station_id))
 	    )
+	    if (! is.null(variable_id)) {
+	      filters <- append(filters, list(list(columnName = "variable_id", operator = "te", value = as.character(variable_id))))
+	    }
 	    if (! is.null(from)) {
 	      filters <- append(filters, list(list(columnName = "observation_date", operator = "gte", value = as.character(from))))
 	    }
