@@ -12,11 +12,11 @@ shiny::shinyUI(
     # HTML <head>
     tags$head(
       shinyalert::useShinyalert(),
-      tags$link(rel = "stylesheet", type = "text/css", href = "styles.css?v=2")
+      tags$link(rel = "stylesheet", type = "text/css", href = "css/styles.css?v=3")
     ),
     
     # Sidebar panel
-    sidebarPanel(width = 2,
+    sidebarPanel(width = 3,
       # Station selector
       dropDownUI("stationId"),
       
@@ -38,7 +38,7 @@ shiny::shinyUI(
     ),
     
     # Main panel
-    mainPanel(width = 10, 
+    mainPanel(width = 9, 
       # Anomalies detection
       conditionalPanel(
         condition = "input.menu == 'anomalyDetection'",

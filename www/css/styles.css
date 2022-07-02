@@ -1,0 +1,44 @@
+.well {
+  background-color: #dddddd;
+  min-height: 700px;
+}
+
+.navbar-header {
+  min-width: 180px;
+  background-image: url("../img/logo-nearbpo.png");
+  background-position: 0px 10px;
+  background-repeat: no-repeat;
+}
+
+span.navbar-brand {
+  margin-left: 50px !important;
+}
+
+.navbar {
+  min-height: 80px !important;
+}
+
+.navbar-nav > li > a, .navbar-brand {
+  min-height: 80px !important;
+  padding-top: 28px;
+  padding-left: 20px;
+}
+
+#menu {
+  padding-left: 200px;
+}
+
+.navbar-header {
+  padding-left: 20px !important;
+}
+
+.blue-button {
+  background-color: #1a242f !important;
+  border-color: #1a242f !important;
+}
+
+.shiny-notification {
+  position: fixed; 
+  top: 50%; 
+  left: 50%
+}
