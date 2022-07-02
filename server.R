@@ -18,6 +18,30 @@ shiny::shinyServer(function(input, output, session) {
     return(NULL)
   })
   
+  # Reactive for finding anomalies
+  findAnomalies <- shiny::reactive({
+    observations <- findObservations()
+    if (! is.null(observations) && ! is.null(input$significanceLevel)) {
+      # Impute missing values
+      timeSeries <- observations %>%
+        dplyr::select(observation_date, observed_value) %>%
+        zoo::read.zoo(index.column = "observation_date") %>%
+        zoo::na.approx()
+      
+      # Anomaly detection
+      timeSeriesTibble <- data.frame(date = zoo::index(timeSeries),
+                                     value = zoo::coredata(timeSeries)) %>%
+        tibble::as_tibble()
+      anomaliesDetected <- timeSeriesTibble %>%
+        anomalize::time_decompose(value, method = "stl", frequency = 365) %>%
+        anomalize::anomalize(remainder, method = "gesd", alpha = input$significanceLevel) %>%
+        dplyr::filter(anomaly == "Yes") %>%
+        dplyr::mutate(title = paste0("!! ", observed, " ºC"), text = "Possible anomaly")
+      return(anomaliesDetected)
+    }
+    return(NULL)
+  })
+  
   # Reactive for proforming STL decomposition based on time-series
   findSTLDecomposition <- shiny::reactive({
     observations <- findObservations()
@@ -41,8 +65,9 @@ shiny::shinyServer(function(input, output, session) {
   output$anomaliesPlot <- highcharter::renderHighchart({
     if (input$menu == "anomalyDetection") {
       observations <- findObservations()
-      if (! is.null(observations) && ! is.null(input$significanceLevel)) {
-        # Transform tibble into zoo object
+      anomalies    <- findAnomalies()
+      if (! is.null(observations) && ! is.null(anomalies)) {
+        # Transform observations into zoo object
         timeSeries <- observations %>%
           dplyr::select(observation_date, observed_value) %>%
           zoo::read.zoo(index.column = "observation_date") %>%
@@ -53,21 +78,11 @@ shiny::shinyServer(function(input, output, session) {
           dplyr::filter(station_id == input$stationId)
         variable <- variables %>%
           dplyr::filter(variable_id == input$variableId)
-         
-        # Anomaly detection
-        timeSeriesTibble <- data.frame(date = zoo::index(timeSeries),
-                                       value = zoo::coredata(timeSeries)) %>%
-          tibble::as_tibble()
-        anomaliesDetected <- timeSeriesTibble %>%
-          anomalize::time_decompose(value, method = "stl", frequency = 365) %>%
-          anomalize::anomalize(remainder, method = "gesd", alpha = input$significanceLevel) %>%
-          dplyr::filter(anomaly == "Yes") %>%
-          dplyr::mutate(title = paste0("!! ", observed, " ºC"), text = "Possible anomaly")
         
         # Plot anomalies
         highcharter::highchart(type = "stock") %>%
           highcharter::hc_add_series(data = xts::as.xts(timeSeries), id = "time_series", name = variable$name) %>%
-          highcharter::hc_add_series(data = anomaliesDetected, mapping = highcharter::hcaes(x = date),
+          highcharter::hc_add_series(data = anomalies, mapping = highcharter::hcaes(x = date),
                                      name = "Anomalies", type = "flags", onSeries = "time_series") %>%
           highcharter::hc_xAxis(title = list(text = "Date")) %>%
           highcharter::hc_yAxis(title = list(text = sprintf("%s (%s)", variable$name, variable$unit))) %>%
@@ -80,6 +95,44 @@ shiny::shinyServer(function(input, output, session) {
           highcharter::hc_exporting(enabled = TRUE) %>%
           highcharter::hc_add_theme(highcharter::hc_theme_flat())
       }
+    }
+  })
+  
+  # Set "Anomaly" status
+  output$uiSetAnomalyStatus <- shiny::renderUI({
+    anomalies <- findAnomalies()
+    if (! is.null(anomalies)) {
+      shiny::actionButton(inputId = "setAnomalyStatus", label = "Mark as anomalies", class = "blue-button", 
+                          icon = shiny::icon(name = "exclamation-sign", lib = "glyphicon"))
+    }
+  })
+  observeEvent(input$setAnomalyStatus, {
+    anomalies <- findAnomalies()
+    if (! is.null(anomalies)) {
+      withProgress({
+        # Find station and variable information
+        station_id <- stations %>%
+          dplyr::filter(station_id == input$stationId) %>%
+          dplyr::pull(station_id)
+        variable_id <- variables %>%
+          dplyr::filter(variable_id == input$variableId) %>%
+          dplyr::pull(variable_id)
+        
+        # Select dates
+        dates <- dplyr::pull(anomalies, date)
+        
+        # Mark dates as "anomalies"
+        tryCatch({
+          observation_facade$set_anomalies(station_id, variable_id, dates)
+          shinyalert::shinyalert(title = "Anomaly detection",
+                                 text = "Values have been successfully marked as anomalies",
+                                 type = "success", confirmButtonCol = "#079d49")  
+        }, error = function(e) {
+          shinyalert::shinyalert(title = "Anomaly detection",
+                                 text = "Error while trying to mark values as anomalies",
+                                 type = "error", confirmButtonCol = "#079d49")
+        })
+      }, message = "Marking values as anomalies. Please, wait...", value = NULL)
     }
   })
   

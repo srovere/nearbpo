@@ -62,6 +62,13 @@ ObservationFacade <- R6Class("ObservationFacade",
 	        pk_rows = new_anomalies,
 	        new_data_rows = tibble::tibble(status = rep('A', nrow(new_anomalies)))
 	      )
+	      
+	      # Set station status as "Quality Check"
+	      super$update(
+	        table = "stations",
+	        pk_rows = tibble::tibble(station_id = station_id),
+	        new_data_rows = tibble::tibble(status = 'QC')
+	      )
 	      return(new_anomalies)
 	    }
 	    return(NULL)

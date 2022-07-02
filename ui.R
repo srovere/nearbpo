@@ -11,7 +11,8 @@ shiny::shinyUI(
     
     # HTML <head>
     tags$head(
-      tags$link(rel = "stylesheet", type = "text/css", href = "styles.css?v=1")
+      shinyalert::useShinyalert(),
+      tags$link(rel = "stylesheet", type = "text/css", href = "styles.css?v=2")
     ),
     
     # Sidebar panel
@@ -27,7 +28,12 @@ shiny::shinyUI(
         condition = "input.menu == 'anomalyDetection'",
         shiny::sliderInput(inputId = "significanceLevel",
                            label = shiny::div(icon("scale", lib = "glyphicon"), span(style = "padding-left: 5px;", "Significance level")),
-                           min = 0.01, max = 0.1, step = 0.01, value = 0.05)
+                           min = config$anomaly_detection$significance_level$minimum, 
+                           max = config$anomaly_detection$significance_level$maximum, 
+                           step = config$anomaly_detection$significance_level$step,
+                           value = config$anomaly_detection$significance_level$default),
+        hr(),
+        shiny::uiOutput(outputId = "uiSetAnomalyStatus")
       )
     ),
     
@@ -43,7 +49,7 @@ shiny::shinyUI(
       
       # Trend analysis
       conditionalPanel(
-        condition = "input.menu == 'trendAnalysis",
+        condition = "input.menu == 'trendAnalysis'",
         shinycssloaders::withSpinner(
           highcharter::highchartOutput("trendAnalysis", height = "700px"),
         type = 5, color = "#008d4c")  

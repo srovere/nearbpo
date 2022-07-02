@@ -7,6 +7,7 @@
 require(dplyr)
 require(highcharter)
 require(shiny)
+require(shinyalert)
 require(shinythemes)
 require(stlplus)
 require(yaml)

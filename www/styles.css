@@ -1,7 +1,7 @@
 .well {
   width: 300px;
   background-color: #dddddd;
-  min-height: 600px;
+  min-height: 700px;
 }
 
 #menu {
@@ -10,4 +10,15 @@
 
 .navbar-header {
   padding-left: 20px !important;
+}
+
+.blue-button {
+  background-color: #1a242f !important;
+  border-color: #1a242f !important;
+}
+
+.shiny-notification {
+  position: fixed; 
+  top: 50%; 
+  left: 50%
 }
