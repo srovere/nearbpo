@@ -9,9 +9,7 @@ VariableFacade <- R6Class("VariableFacade",
 	  },
 	  
 		findAll = function() {
-		  variables <- private$dataSource$select(
-		    table = "variables", query = list()
-		  )
+		  variables <- super$find(table = "variables")
 		  return(variables)
 		}
 	)

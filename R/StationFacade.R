@@ -9,9 +9,7 @@ StationFacade <- R6Class("StationFacade",
 	  },
 	  
 	  findAll = function() {
-	    stations <- private$dataSource$select(
-	      table = "stations", query = list()
-	    ) 
+	    stations <- super$find(table = "stations")
 	    return(stations)
 	  }
 	)

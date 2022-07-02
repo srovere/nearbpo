@@ -12,7 +12,7 @@ shiny::shinyServer(function(input, output, session) {
   # Reactive for finding observations given a station and variable
   findObservations <- shiny::reactive({
     if (! is.null(input$stationId) && ! is.null(input$variableId)) {
-      observations <- observation_facade$find(station_id = input$stationId, variable_id = input$variable_id)
+      observations <- observation_facade$find(station_id = input$stationId, variable_id = input$variableId)
       return(observations)
     }
     return(NULL)
