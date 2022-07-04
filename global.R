@@ -5,7 +5,9 @@
 
 # Load packages
 require(dplyr)
+require(DT)
 require(highcharter)
+require(leaflet)
 require(shiny)
 require(shinyalert)
 require(shinythemes)

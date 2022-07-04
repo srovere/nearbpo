@@ -21,6 +21,8 @@ basemap:
   url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   attribution: "NearBPO"
   center:
-    latitude: -64.7597
-    longitude: -34.6989
-  zoom: 20
+    latitude: -34.6989
+    longitude: -64.7597
+  zoom: 4
+  colors: { 'N': '#e6ab02', 'QC': '#e41a1c', 'V': '#33a02c' }
+  legend: { 'N': 'Not checked', 'QC': 'QC failed', 'V': 'QC passed' }

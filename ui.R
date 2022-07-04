@@ -17,11 +17,14 @@ shiny::shinyUI(
     
     # Sidebar panel
     sidebarPanel(width = 3,
-      # Station selector
-      dropDownUI("stationId"),
-      
       # Variable selector
       dropDownUI("variableId"),
+      
+      # Station selector
+      conditionalPanel(
+        condition = "(input.menu == 'anomalyDetection') || (input.menu == 'trendAnalysis')",
+        dropDownUI("stationId"),
+      ),
       
       # Significance level for E-S-D test
       conditionalPanel(
@@ -34,6 +37,14 @@ shiny::shinyUI(
                            value = config$anomaly_detection$significance_level$default),
         hr(),
         shiny::uiOutput(outputId = "uiSetAnomalyStatus")
+      ),
+      
+      # Instructions for data correction + action button
+      conditionalPanel(
+        condition = "input.menu == 'dataCorrection'",
+        tags$p("You may edit an observed value by double-clicking on it. After changing the value, click outside the input box to save."),
+        hr(),
+        shiny::uiOutput(outputId = "uiMarkNotAnAnomaly")
       )
     ),
     
@@ -45,6 +56,22 @@ shiny::shinyUI(
         shinycssloaders::withSpinner(
           highcharter::highchartOutput("anomaliesPlot", height = "700px"),
         type = 5, color = "#008d4c")  
+      ),
+      
+      conditionalPanel(
+        condition = "input.menu == 'dataCorrection'",
+        fluidRow(
+          column(6, shinycssloaders::withSpinner(
+            leaflet::leafletOutput("stationsMap", height = "700px"),
+          type = 5, color = "#008d4c")),
+          column(6, 
+            shiny::uiOutput(outputId = "uiAnomalyTableHeader"),
+            br(),
+            shinycssloaders::withSpinner(
+              DT::dataTableOutput("anomaliesTable", height = "700px"),
+            type = 5, color = "#008d4c")
+          )
+        )
       ),
       
       # Trend analysis

@@ -41,8 +41,12 @@ ObservationFacade <- R6Class("ObservationFacade",
 	    # 1. Current must be marked as "Not-an-Anomaly" unless included in new list of anomalies
 	    old_anomalies <- self$get_anomalies(station_id, variable_id) %>%
 	      dplyr::select(station_id, variable_id, observation_date)
-	    not_anomalies <- old_anomalies %>%
-	      dplyr::filter(! observation_date %in% dates)
+	    if (length(dates) > 0) {
+	      not_anomalies <- old_anomalies %>%
+	        dplyr::filter(! observation_date %in% dates)  
+	    } else {
+	      not_anomalies <- old_anomalies
+	    }
 	    if (nrow(not_anomalies) > 0) {
 	      # Set as "Not-an-Anomaly"
 	      count <- super$update(
@@ -62,20 +66,36 @@ ObservationFacade <- R6Class("ObservationFacade",
 	        pk_rows = new_anomalies,
 	        new_data_rows = tibble::tibble(status = rep('A', nrow(new_anomalies)))
 	      )
-	      
-	      # Set station status as "Quality Check"
-	      super$update(
-	        table = "stations",
-	        pk_rows = tibble::tibble(station_id = station_id),
-	        new_data_rows = tibble::tibble(status = 'QC')
-	      )
-	      return(new_anomalies)
 	    }
+	    
+	    # 3. Set station status as "Quality Check" if anomalies > 0
+	    new_status <- ifelse(length(dates) > 0, 'QC', 'V')
+	    super$update(
+	      table = "stations",
+	      pk_rows = tibble::tibble(station_id = station_id),
+	      new_data_rows = tibble::tibble(status = new_status)
+	    )
 	    return(NULL)
 	  },
 	  
-	  set_observed_value = function(station_id, observation_date, variable_id, observed_value) {
-	    # TODO
+	  set_observed_value = function(station_id, variable_id, observation_date, observed_value) {
+	    # Set new value and mark observation as "Not-an-anomaly"
+	    super$update(
+	      table = "observations",
+	      pk_rows = tibble::tibble(station_id = station_id, variable_id = variable_id, observation_date = observation_date),
+	      new_data_rows = tibble::tibble(observed_value = observed_value, status = 'N')
+	    )
+	    
+	    # Set station status as "V" if anomalies = 0
+	    anomalies <- self$get_anomalies(station_id, variable_id)
+	    if (nrow(anomalies) == 0) {
+  	    super$update(
+  	      table = "stations",
+  	      pk_rows = tibble::tibble(station_id = station_id),
+  	      new_data_rows = tibble::tibble(status = 'V')
+  	    )
+	    }
+	    return(anomalies)
 	  }
 	)
 )
