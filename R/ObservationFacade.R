@@ -25,7 +25,23 @@ ObservationFacade <- R6Class("ObservationFacade",
 	    observations <- super$find(
 	      table = "observations", eq_filters = eq_filters, 
 	      non_eq_filters = non_eq_filters
-	    ) %>% dplyr::mutate(observation_date = as.Date(observation_date))
+	    )
+	    if (is.null(observations)) {
+	      # Return empty tibble
+	      observations <- tibble::tibble(
+	        station_id = integer(),
+	        variable_id = character(),
+	        observation_date = character(),
+	        observed_value = double(),
+	        status = character()
+	      )
+	    }
+	    
+	    # Mutate observation date to Date and return
+	    # Filter observations with NA values
+	    observations <- observations %>% 
+	      dplyr::mutate(observation_date = as.Date(observation_date)) %>%
+	      dplyr::filter(! is.na(observed_value))
 	    return(observations)
 	  },
 	  

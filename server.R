@@ -32,7 +32,7 @@ shiny::shinyServer(function(input, output, session) {
   # Reactive for finding anomalies
   findAnomalies <- shiny::reactive({
     observations <- findObservations()
-    if (! is.null(observations) && ! is.null(input$significanceLevel)) {
+    if (! is.null(observations) && (nrow(observations) > 0) && ! is.null(input$significanceLevel)) {
       # Impute missing values
       timeSeries <- observations %>%
         dplyr::select(observation_date, observed_value) %>%
@@ -56,7 +56,7 @@ shiny::shinyServer(function(input, output, session) {
   # Reactive for proforming STL decomposition based on time-series
   findSTLDecomposition <- shiny::reactive({
     observations <- findObservations()
-    if (! is.null(observations)) {
+    if (! is.null(observations) && (nrow(observations) > 0)) {
       # Sealizar decomposicion
       stl_object <- stlplus::stlplus(x = dplyr::pull(observations, observed_value),
                                      t = dplyr::pull(observations, observation_date),
@@ -140,6 +140,7 @@ shiny::shinyServer(function(input, output, session) {
                                  text = "Values have been successfully marked as anomalies",
                                  type = "success", confirmButtonCol = "#079d49")  
         }, error = function(e) {
+          warning(paste0(e$call, ": ", e$message))
           shinyalert::shinyalert(title = "Anomaly detection",
                                  text = "Error while trying to mark values as anomalies",
                                  type = "error", confirmButtonCol = "#079d49")
