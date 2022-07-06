@@ -43,12 +43,17 @@ shiny::shinyServer(function(input, output, session) {
       timeSeriesTibble <- data.frame(date = zoo::index(timeSeries),
                                      value = zoo::coredata(timeSeries)) %>%
         tibble::as_tibble()
-      anomaliesDetected <- timeSeriesTibble %>%
-        anomalize::time_decompose(value, method = "stl", frequency = 365, message = FALSE) %>%
-        anomalize::anomalize(remainder, method = "gesd", alpha = input$significanceLevel) %>%
-        dplyr::filter(anomaly == "Yes") %>%
-        dplyr::mutate(title = paste0("!! ", observed, " ºC"), text = "Possible anomaly")
-      return(anomaliesDetected)
+      
+      tryCatch({
+        anomaliesDetected <- timeSeriesTibble %>%
+          anomalize::time_decompose(value, method = "stl", frequency = 365, message = FALSE) %>%
+          anomalize::anomalize(remainder, method = "gesd", alpha = input$significanceLevel) %>%
+          dplyr::filter(anomaly == "Yes") %>%
+          dplyr::mutate(title = paste0("!! ", observed, " ºC"), text = "Possible anomaly")
+        return(anomaliesDetected)
+      }, error = function(e) {
+        warning(e$message)  
+      })
     }
     return(NULL)
   })
