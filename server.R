@@ -12,7 +12,7 @@ shiny::shinyServer(function(input, output, session) {
   # Reactive for finding stations
   stationsReactive <- shiny::reactiveValues(stations = NULL, version = 0)
   findStations <- shiny::reactive({
-    if (is.null(stationsReactive$stations) || stationsReactive$version) {
+    if (is.null(stationsReactive$stations) || (nrow(stationsReactive$stations) == 0) || stationsReactive$version) {
       warning("Updating stations")
       stationsReactive$stations <- station_facade$findAll() %>%
         dplyr::arrange(name)
