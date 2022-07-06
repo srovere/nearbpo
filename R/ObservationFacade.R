@@ -10,7 +10,7 @@ ObservationFacade <- R6Class("ObservationFacade",
 	  
 	  find = function(station_id, variable_id, from = NULL, to = NULL, status = NULL) {
 	    # Define "eq" filters
-	    eq_filters <- list("station_id" = station_id, "variable_id" = variable_id)
+	    eq_filters <- list("station_id" = station_id, "variable_id" = variable_id, "status" = status)
 	    
 	    # Define "non-eq" filters
 	    non_eq_filters <- list()
@@ -21,14 +21,10 @@ ObservationFacade <- R6Class("ObservationFacade",
 	      non_eq_filters <- append(non_eq_filters, list(list(column_name = "observation_date", operator = "lte", value = to)))
 	    }
 	    
-	    # Define "post-query" filters
-	    post_query_filters <- list("status" = status)
-	    
 	    # Execute query
 	    observations <- super$find(
 	      table = "observations", eq_filters = eq_filters, 
-	      non_eq_filters = non_eq_filters,
-	      post_query_filters = post_query_filters
+	      non_eq_filters = non_eq_filters
 	    ) %>% dplyr::mutate(observation_date = as.Date(observation_date))
 	    return(observations)
 	  },

@@ -28,7 +28,7 @@ Facade <- R6Class("Facade",
 	  }
 	),
 	public = list(
-	  find = function(table, eq_filters = list(), non_eq_filters = list(), post_query_filters = list()) {
+	  find = function(table, eq_filters = list(), non_eq_filters = list()) {
 	    # Initialize filters
 	    filters <- purrr::map(
 	      .x = names(eq_filters),
@@ -59,8 +59,7 @@ Facade <- R6Class("Facade",
 	    }
 	    
 	    # Execute query
-	    private$dataSource$select(table = table, query = filters) %>%
-	      private$filter(rows = ., filters = post_query_filters)
+	    private$dataSource$select(table = table, query = filters)
 	  },
 	  
 	  update = function(table, pk_rows, new_data_rows) {

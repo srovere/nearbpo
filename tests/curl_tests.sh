@@ -19,12 +19,13 @@ export ASTRA_DB_APPLICATION_TOKEN=AstraCS:RawszStYieKGNvPbZbylktYX:d4250b3737160
 #    --url https://${ASTRA_DB_ID}-${ASTRA_DB_REGION}.apps.astra.datastax.com/api/rest/v1/keyspaces/${ASTRA_DB_KEYSPACE}/tables/variables/rows \
 #    --header "x-cassandra-token: ${ASTRA_DB_APPLICATION_TOKEN}"
 
-# Registros de la estacion 87544
+# Observations from station 87544
+# --data '{ "pageSize": 1000, "filters": [ { "columnName": "station_id", "operator": "eq", "value": [ "87544" ] }, { "columnName": "status", "operator": "eq", "value": [ "A" ] } ] }'
 #curl --request POST \
 #    --url https://${ASTRA_DB_ID}-${ASTRA_DB_REGION}.apps.astra.datastax.com/api/rest/v1/keyspaces/${ASTRA_DB_KEYSPACE}/tables/observations/rows/query \
 #    --header "Content-Type: application/json" \
 #    --header "x-cassandra-token: ${ASTRA_DB_APPLICATION_TOKEN}" \
-#    --data '{ "pageSize": 1000, "filters": [ { "columnName": "station_id", "operator": "eq", "value": [ "87544" ] }, { "columnName": "observation_date", "operator": "gte", "value": [ "2019-06-01" ] } ] }'
+#    --data '{ "pageSize": 1000, "filters": [ { "columnName": "station_id", "operator": "eq", "value": [ "87544" ] } ] }'
 
 # UPDATES
 #curl --request PATCH \
